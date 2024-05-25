@@ -7,20 +7,19 @@
 	<h1>Hello World!</h1>
 	<div id="clock"></div>
 	<footer>Contact for more information</footer>
-	<script>
-        function updateClock() {
-            const now = new Date();
-            let hours = now.getHours();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
-            const strTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
-            document.getElementById('clock').innerText = strTime;
-        }
-        setInterval(updateClock, 1000);
-        updateClock(); // initial call
-    </script>
+    	<script>
+        	function updateClock() {
+        	const now = new Date();
+        	const hours = now.getHours();
+        	const minutes = now.getMinutes();
+        	const seconds = now.getSeconds();
+        	const strTime = hours.toString().padStart(2, '0') + ':' +
+        	minutes.toString().padStart(2, '0') + ':' +
+                seconds.toString().padStart(2, '0');
+        	document.getElementById('clock').innerText = strTime;
+        		}
+        	setInterval(updateClock, 1000);
+        	updateClock(); // initial call
+    	</script>
 </body>
 </html>
