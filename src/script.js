@@ -25,3 +25,8 @@ function generateFile() {
     // Usuń link z dokumentu
     document.body.removeChild(link);
 }
+
+function changeBackgroundColor() {
+    document.body.style.backgroundColor = 
+        document.body.style.backgroundColor === 'lightblue' ? 'white' : 'lightblue';
+}
