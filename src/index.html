@@ -6,8 +6,10 @@
 <body>
 	<h1>Hello World!</h1>
     	<button onclick="generateFile()">Generate File</button>
+	<button onclick="changeBackgroundColor()">Change Background Color</button>
     	<script src="script.js"></script>
 	<div id="clock"></div>
+	<div id="visitor-count"></div> 
 	<section>
         	<h2>Gallery</h2>
         	<img src="img/logo_prz.png" alt="Description of the image" style="height: 300px; width: auto;">
@@ -26,6 +28,14 @@
         		}
         	setInterval(updateClock, 1000);
         	updateClock(); // initial call
+
+        	function updateVisitorCount() {
+                const count = localStorage.getItem('visitorCount') || 0;
+            	const newCount = parseInt(count) + 1;
+            	localStorage.setItem('visitorCount', newCount);
+            	document.getElementById('visitor-count').innerText = "Visits: " + newCount;
+        	}
+       		updateVisitorCount(); // initial call
     	</script>
 </body>
 </html>
