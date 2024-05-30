@@ -1,4 +1,3 @@
-
 // script.js
 function generateFile() {
     // Pobierz dane do wygenerowania pliku
@@ -29,4 +28,15 @@ function generateFile() {
 function changeBackgroundColor() {
     document.body.style.backgroundColor = 
         document.body.style.backgroundColor === 'lightblue' ? 'white' : 'lightblue';
+}
+
+function addTodo() {
+    const todoInput = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
+
+    const newTask = document.createElement('li');
+    newTask.textContent = todoInput.value;
+    todoList.appendChild(newTask);
+
+    todoInput.value = '';
 }
